@@ -1,0 +1,15 @@
+{
+    "ludo":
+    {
+    "local_socket_url":"http://192.168.2.66:3001/",
+    "staging_socket_url":"http://13.126.196.121:3005/",
+    "live_socket_url":"https://real11-ludo.staging-server.in:3017/",
+    "qa_socket_url":"https://real11-ludo.staging-server.in:3017/",
+    "asset_bundle_file":"https://public.3.basecamp.com/p/KrMdDjFprX5EUbLuDKyVzVBi/upload/download/classic_ludo?disposition=attachment",
+    "android_asset_bundle_file":"https://public.3.basecamp.com/p/KrMdDjFprX5EUbLuDKyVzVBi/upload/download/classic_ludo?disposition=attachment",
+    "android_asset_bundle_internal":"https://public.3.basecamp.com/p/PdXbm6h1zK8W2A7iiMXxmWU9/upload/download/real_11_ludointernal?disposition=attachment",
+    "ios_asset_bundle_file":"https://public.3.basecamp.com/p/We4Pb9kifXhjp1agKi3eYuTr/upload/download/classic_ludo?disposition=attachment",
+    "namespace": "/",
+    "asset_bundle_version": "1.3"
+    }
+}

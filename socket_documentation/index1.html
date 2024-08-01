@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="PkOhd0cRIQNOJRJtQlwzvzx4lH3vyCMuBY85Luoj">
+
+    <title>Socket Events Documentation</title>
+
+    <!-- Scripts -->
+    <!-- <script src="js/app.js" defer></script> -->
+    
+
+    <!-- Fonts -->
+    <!-- <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> -->
+
+    <!-- Styles -->
+    <link href="css/app.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/jquery.json-viewer.css" rel="stylesheet">
+    
+    
+
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
+
+<style type="text/css">
+    .panel-heading .accordion-toggle:after {
+        /* symbol for "opening" panels */
+        font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+        content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+        float: right;        /* adjust as needed */
+        color: grey;         /* adjust as needed */
+    }
+    .panel-heading .accordion-toggle.collapsed:after {
+        /* symbol for "collapsed" panels */
+        content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+    }
+
+</style>
+
+<script src="js/jquery.json-viewer.js" ></script>
+<script src="js/jquery.json-editor.js" ></script>
+
+</head>
+<body>
+    <div id="app">
+       
+        <main class="py-4">
+            <div class="container-fluid">      
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Socket Events</h3>
+            <br>
+            <h4>Emit events</h4>
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <td width="5%">Sr.No</td>
+                        <td width="20%">Description</td>
+                        <td width="10%">Event Name</td>
+                        <td width="15%">Event Sent To</td>
+                        <td width="5%">Pass Data</td>
+                        <td width="40%">Responce</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td >1</td>
+                        <td>This event use for do connection with socket.</td>
+                        <td>join</td>
+                        <td>To user</td>
+                        <td>
+                            <code>-</code>
+                        </td>
+                        </td>
+                            <td>
+                                <code id="json-input-1">{
+                                    "status": 1,
+                                    "message": "Socket registered successfully",
+                                    "server_time": "1685595235031",
+                                    "joined": "0/1 (if 1 then user is already playing so fire join previous event)"
+                                }
+                            </code>
+                            <pre id="json-display-1"></pre>
+
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td >2</td>
+                        <td>This event is fire when another user join room.</td>
+                        <td>joinPublicTable</td>
+                        <td>To All In Room Excluding User </td>
+                        <td>
+                            <code>-</code>
+                        </td>
+                        </td>
+                            <td>
+                                <code id="json-input-14">{
+                                    "room": 251199,
+                                    "name": "abc12",
+                                    "profile": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8czzbrLzXJ9R_uhKyMiwj1iGxKhJtH7pwlQ&usqp=CAU",
+                                    "position": 1
+                                }
+                            </code>
+                            <pre id="json-display-14"></pre>
+
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td >3</td>
+                        <td>This event will fire when game is starts in thet room.</td>
+                        <td>startGame</td>
+                        <td>In Room</td>
+                        <td>
+                            <code>-</code>
+                        </td>
+                        </td>
+                        <td>
+                            <code id="json-input-2">{
+                                    "status": 1,
+                                    "message": "Done",
+                                    "room": "448910",
+                                    "table": {
+                                        "room": "448910",
+                                        "room_type": "PUB",
+                                        "created_by": "12",
+                                        "created_at": 1685613186722,
+                                        "room_fee": 10,
+                                        "no_of_players": 2,
+                                        "tournament_id": " ",
+                                        "players_done": 0,
+                                        "players_won": 0,
+                                        "current_turn": 0,
+                                        "no_of_winners": 0,
+                                        "dice_rolled_at": -1,
+                                        "current_turn_type": "roll",
+                                        "turn_start_at": 1685613190791,
+                                        "users": [
+                                            {
+                                                "is_done": false,
+                                                "position": 0,
+                                                "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8czzbrLzXJ9R_uhKyMiwj1iGxKhJtH7pwlQ&usqp=CAU",
+                                                "is_left": false,
+                                                "dices_rolled": [
+                                                    1
+                                                ],
+                                                "bonus_dice": 0,
+                                                "rank": 0,
+                                                "profile_pic": "",
+                                                "life": 10,
+                                                "is_first_roll": false,
+                                                "id": "12",
+                                                "dice_rolled_at": -1,
+                                                "name": "abc_12",
+                                                "numeric_id": 12,
+                                                "userId": "12",
+                                                "tokens": [
+                                                    -1,
+                                                    -1,
+                                                    -1,
+                                                    -1
+                                                ],
+                                                "is_active": true
+                                            },
+                                            {
+                                                "id": "",
+                                                "numeric_id": "",
+                                                "name": "",
+                                                "profile_pic": "",
+                                                "position": 1,
+                                                "is_active": false,
+                                                "is_done": false,
+                                                "is_left": false,
+                                                "rank": 0,
+                                                "life": 0,
+                                                "dices_rolled": [],
+                                                "bonus_dice": 0,
+                                                "dice_rolled_at": -1,
+                                                "is_first_roll": false,
+                                                "tokens": [
+                                                    -1,
+                                                    -1,
+                                                    -1,
+                                                    -1
+                                                ]
+                                            },
+                                            {
+                                                "is_done": false,
+                                                "position": 2,
+                                                "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8czzbrLzXJ9R_uhKyMiwj1iGxKhJtH7pwlQ&usqp=CAU",
+                                                "is_left": false,
+                                                "dices_rolled": [],
+                                                "bonus_dice": 0,
+                                                "rank": 0,
+                                                "profile_pic": "",
+                                                "life": 10,
+                                                "is_first_roll": false,
+                                                "id": "13",
+                                                "dice_rolled_at": -1,
+                                                "name": "abc_123",
+                                                "numeric_id": 13,
+                                                "userId": "13",
+                                                "tokens": [
+                                                    -1,
+                                                    -1,
+                                                    -1,
+                                                    -1
+                                                ],
+                                                "is_active": true
+                                            },
+                                            {
+                                                "id": "",
+                                                "numeric_id": "",
+                                                "name": "",
+                                                "profile_pic": "",
+                                                "position": 3,
+                                                "is_active": false,
+                                                "is_done": false,
+                                                "is_left": false,
+                                                "rank": 0,
+                                                "life": 0,
+                                                "dices_rolled": [],
+                                                "bonus_dice": 0,
+                                                "dice_rolled_at": -1,
+                                                "is_first_roll": false,
+                                                "tokens": [
+                                                    -1,
+                                                    -1,
+                                                    -1,
+                                                    -1
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "dice": 1,
+                                    "possition": 0
+                                }
+                            </code>
+                            <pre id="json-display-2"></pre>
+                        </td>
+                    </tr>       
+                    <tr>
+                        <td >4</td>
+                        <td>This event is fires when it's user time to roll dice.</td>
+                        <td>make_diceroll</td>
+                        <td>In Room</td>
+                        <td>
+                            <code>-</code>
+                        </td>
+                        </td>
+                        <td>
+                            <code id="json-input-3">{
+                                "room": "448910",
+                                "position": 2,
+                                "tokens": {},
+                                "dice": 6,
+                                "dices_rolled": {}
+                            }</code>
+                            <pre id="json-display-3"></pre>
+                        </td>
+                    </tr>                    
+                    <tr>
+                        <td >5</td>
+                        <td>This event is fires when any user complete dice roll</td>
+                        <td>dice_rolled</td>
+                        <td>In Room</td>
+                        <td>
+                            <code>-</code>
+                        </td>
+                        </td>
+                        <td>
+                            <code id="json-input-4">{
+                                "status": 1,
+                                "message": "SUCCESS",
+                                "dice": 3,
+                                "dices_rolled": [
+                                    3
+                                ]
+                            }</code>
+                            <pre id="json-display-4"></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >6</td>
+                        <td>This event is fires when user complete dice roll and now able to move token.</td>
+                        <td>make_move</td>
+                        <td>In Room</td>
+                        <td>
+                            <code>-</code>
+                        </td>
+                        </td>
+                        <td>
+                            <code id="json-input-5">{
+                                "room": "448910",
+                                "position": 0,
+                                "dices_rolled": [
+                                    6,
+                                    2
+                                ]
+                            }</code>
+                            <pre id="json-display-5"></pre>
+                        </td>
+                    </tr>    
+                    <tr>
+                        <td >7</td>
+                        <td>This event is fires when user complete move of token.</td>
+                        <td>move_made</td>
+                        <td>In Room</td>
+                        <td>
+                            <code>-</code>
+                        </td>
+                        </td>
+                        <td>
+                            <code id="json-input-6">{
+                                "status": 1,
+                                "message": "SUCCESS"
+                            }</code>
+                            <pre id="json-display-6"></pre>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td >8</td>
+                        <td>This event is fires when user left room.</td>
+                        <td>playerLeft</td>
+                        <td>In Room Opponent player</td>
+                        <td>
+                            <code>-</code>
+                        </td>
+                        </td>
+                        <td>
+                            <code id="json-input-7">{
+                                "room": "945746",
+                                "position": 2
+                            }</code>
+                            <pre id="json-display-7"></pre>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td >9</td>
+                        <td>This event is every seconds for track how many seconds are remaining to complete this turn.</td>
+                        <td>turnTimer</td>
+                        <td>In Room</td>
+                        <td>
+                            <code>-</code>
+                        </td>
+                        </td>
+                        <td>
+                            <code id="json-input-9">{
+                                "room": 395428,
+                                "currentPlayerId": 11223344,
+                                "turnTimer": 5
+                            }</code>
+                            <pre id="json-display-9"></pre>
+                        </td>
+                    </tr>  
+                    <tr>
+                        <td >12</td>
+                        <td>This event is fires when there is some issue in deduct money.</td>
+                        <td>gameAborted</td>
+                        <td>In Room</td>
+                        <td>
+                            <code>-</code>
+                        </td>
+                        </td>
+                        <td>
+                            <code id="json-input-12">{
+                                    "status": 0,
+                                    "message": "Game aborted, Something went wrong",
+                                    "room": 251199
+                                }</code>
+                            <pre id="json-display-12"></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >13</td>
+                        <td>This event is fires when game is completed.</td>
+                        <td>endGame</td>
+                        <td>In Room</td>
+                        <td>
+                            <code>-</code>
+                        </td>
+                        </td>
+                        <td>
+                            <code id="json-input-13">{
+                                "room": "435585",
+                                "game_data": [
+                                    {
+                                        "player_index": 2,
+                                        "name": "abc_12",
+                                        "numeric_id": 12,
+                                        "rank": 1,
+                                        "amount": 10,
+                                        "id": "12"
+                                    },
+                                    {
+                                        "player_index": 0,
+                                        "name": "abc_123",
+                                        "numeric_id": 13,
+                                        "rank": 2,
+                                        "amount": -10,
+                                        "id": "13"
+                                    }
+                                ]
+                            }</code>
+                            <pre id="json-display-13"></pre>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <h4>Listen events</h4>
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <td width="5%">Sr.No</td>
+                        <td width="20%">Description</td>
+                        <td width="10%">Event Name</td>
+                        <td width="25%">Pass Data</td>
+                        <td width="35%">Responce</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td >1</td>
+                        <td>This event use Authenticate user (it gives status 1 when user is alredy playing).</td>
+                        <td>join</td>
+                        <td>
+                            <code>{
+                                "token": "1111"
+                            }</code>
+                        </td>
+                        </td>
+                            <td>
+                                <code id="json-input-15">{
+                                    "status": 1,
+                                    "message": "Socket registered successfully",
+                                    "server_time": "1685595235031",
+                                    "joined": "0/1 (if 1 then user is already playing so fire join previous event)"
+                                }
+                            </code>
+                            <pre id="json-display-15"></pre>
+
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td >2</td>
+                        <td>This event use for join user in public table 
+                            Here it finds room with room fees if room available then we join user in room else we create new room and join user in that room.</td>
+                        <td>joinPublicTable</td>
+                        <td>
+                            <code>{"no_of_players":"2","room_fee":"10", "token":"2222"}</code>
+                        </td>
+                        </td>
+                        <td>
+                            <code id="json-input-16">{
+                                "status": 1,
+                                "message": "Done",
+                                "table": {
+                                    "room": "209033",
+                                    "room_type": "PUB",
+                                    "created_by": "13",
+                                    "created_at": 1685601510245,
+                                    "room_fee": 10,
+                                    "no_of_players": 2,
+                                    "tournament_id": " ",
+                                    "players_done": 0,
+                                    "players_won": 0,
+                                    "current_turn": -1,
+                                    "no_of_winners": 0,
+                                    "dice_rolled_at": -1,
+                                    "current_turn_type": "roll",
+                                    "turn_start_at": 0,
+                                    "users": [
+                                        {
+                                            "is_done": false,
+                                            "position": 0,
+                                            "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8czzbrLzXJ9R_uhKyMiwj1iGxKhJtH7pwlQ&usqp=CAU",
+                                            "is_left": false,
+                                            "dices_rolled": [],
+                                            "bonus_dice": 0,
+                                            "rank": 0,
+                                            "profile_pic": "",
+                                            "life": 5,
+                                            "is_first_roll": false,
+                                            "id": "13",
+                                            "dice_rolled_at": -1,
+                                            "name": "abc_123",
+                                            "numeric_id": 13,
+                                            "userId": "13",
+                                            "tokens": [
+                                                -1,
+                                                -1,
+                                                -1,
+                                                -1
+                                            ],
+                                            "is_active": true
+                                        },
+                                        {
+                                            "id": "",
+                                            "numeric_id": "",
+                                            "name": "",
+                                            "profile_pic": "",
+                                            "position": 1,
+                                            "is_active": false,
+                                            "is_done": false,
+                                            "is_left": false,
+                                            "rank": 0,
+                                            "life": 0,
+                                            "dices_rolled": [],
+                                            "bonus_dice": 0,
+                                            "dice_rolled_at": -1,
+                                            "is_first_roll": false,
+                                            "tokens": [
+                                                -1,
+                                                -1,
+                                                -1,
+                                                -1
+                                            ]
+                                        },
+                                        {
+                                            "id": "",
+                                            "numeric_id": "",
+                                            "name": "",
+                                            "profile_pic": "",
+                                            "position": 2,
+                                            "is_active": false,
+                                            "is_done": false,
+                                            "is_left": false,
+                                            "rank": 0,
+                                            "life": 0,
+                                            "dices_rolled": [],
+                                            "bonus_dice": 0,
+                                            "dice_rolled_at": -1,
+                                            "is_first_roll": false,
+                                            "tokens": [
+                                                -1,
+                                                -1,
+                                                -1,
+                                                -1
+                                            ]
+                                        },
+                                        {
+                                            "id": "",
+                                            "numeric_id": "",
+                                            "name": "",
+                                            "profile_pic": "",
+                                            "position": 3,
+                                            "is_active": false,
+                                            "is_done": false,
+                                            "is_left": false,
+                                            "rank": 0,
+                                            "life": 0,
+                                            "dices_rolled": [],
+                                            "bonus_dice": 0,
+                                            "dice_rolled_at": -1,
+                                            "is_first_roll": false,
+                                            "tokens": [
+                                                -1,
+                                                -1,
+                                                -1,
+                                                -1
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "position": 0,
+                                "timerStart": 120
+                            }</code>
+                            <pre id="json-display-16"></pre>
+                        </td>
+                    </tr>       
+                    <tr>
+                        <td >3</td>
+                        <td>This event use for get dice roll from server.</td>
+                        <td>dice_rolled</td>
+                        <td>
+                            <code>{
+                                "room": "262829"
+                            }</code>
+                        </td>
+                        </td>
+                        <td>
+                            <code id="json-input-17">{
+                                "status": 1,
+                                "message": "SUCCESS",
+                                "dice": 6,
+                                "dices_rolled": [
+                                    6
+                                ]
+                            }</code>
+                            <pre id="json-display-17"></pre>
+                        </td>
+                    </tr>                    
+                    <tr>
+                        <td >4</td>
+                        <td>This event is use when user move token.</td>
+                        <td>move_made</td>
+                        <td>
+                            <code>{"token_index":1, "dice_value":4, "room":"448910"}</code>
+                        </td>
+                        </td>
+                        <td>
+                            <code id="json-input-18">{
+                                "status": 1,
+                                "message": "SUCCESS"
+                            }</code>
+                            <pre id="json-display-18"></pre>
+                        </td>
+                    </tr>  
+                    <tr>
+                        <td >5</td>
+                        <td>This event is use join user in last running game.</td>
+                        <td>join_previous</td>
+                        <td>
+                            <code>{}</code>
+                        </td>
+                        </td>
+                        <td>
+                            <code id="json-input-19">{
+                                "status": 1,
+                                "table": {
+                                    "room": "518796",
+                                    "room_type": "PUB",
+                                    "created_by": "13",
+                                    "created_at": 1685601829158,
+                                    "room_fee": 10,
+                                    "no_of_players": 2,
+                                    "tournament_id": " ",
+                                    "players_done": 0,
+                                    "players_won": 0,
+                                    "current_turn": 0,
+                                    "no_of_winners": 0,
+                                    "dice_rolled_at": -1,
+                                    "current_turn_type": "roll",
+                                    "turn_start_at": 1685601834236,
+                                    "users": [
+                                        {
+                                            "is_done": false,
+                                            "position": 0,
+                                            "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8czzbrLzXJ9R_uhKyMiwj1iGxKhJtH7pwlQ&usqp=CAU",
+                                            "is_left": false,
+                                            "dices_rolled": [
+                                                6
+                                            ],
+                                            "bonus_dice": 0,
+                                            "rank": 0,
+                                            "profile_pic": "",
+                                            "life": 5,
+                                            "is_first_roll": false,
+                                            "id": "13",
+                                            "dice_rolled_at": -1,
+                                            "name": "abc_123",
+                                            "numeric_id": 13,
+                                            "userId": "13",
+                                            "tokens": [
+                                                -1,
+                                                -1,
+                                                -1,
+                                                -1
+                                            ],
+                                            "is_active": true
+                                        },
+                                        {
+                                            "id": "",
+                                            "numeric_id": "",
+                                            "name": "",
+                                            "profile_pic": "",
+                                            "position": 1,
+                                            "is_active": false,
+                                            "is_done": false,
+                                            "is_left": false,
+                                            "rank": 0,
+                                            "life": 0,
+                                            "dices_rolled": [],
+                                            "bonus_dice": 0,
+                                            "dice_rolled_at": -1,
+                                            "is_first_roll": false,
+                                            "tokens": [
+                                                -1,
+                                                -1,
+                                                -1,
+                                                -1
+                                            ]
+                                        },
+                                        {
+                                            "is_done": false,
+                                            "position": 2,
+                                            "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8czzbrLzXJ9R_uhKyMiwj1iGxKhJtH7pwlQ&usqp=CAU",
+                                            "is_left": false,
+                                            "dices_rolled": [],
+                                            "bonus_dice": 0,
+                                            "rank": 0,
+                                            "profile_pic": "",
+                                            "life": 5,
+                                            "is_first_roll": false,
+                                            "id": "12",
+                                            "dice_rolled_at": -1,
+                                            "name": "abc_12",
+                                            "numeric_id": 12,
+                                            "userId": "12",
+                                            "tokens": [
+                                                -1,
+                                                -1,
+                                                -1,
+                                                -1
+                                            ],
+                                            "is_active": true
+                                        },
+                                        {
+                                            "id": "",
+                                            "numeric_id": "",
+                                            "name": "",
+                                            "profile_pic": "",
+                                            "position": 3,
+                                            "is_active": false,
+                                            "is_done": false,
+                                            "is_left": false,
+                                            "rank": 0,
+                                            "life": 0,
+                                            "dices_rolled": [],
+                                            "bonus_dice": 0,
+                                            "dice_rolled_at": -1,
+                                            "is_first_roll": false,
+                                            "tokens": [
+                                                -1,
+                                                -1,
+                                                -1,
+                                                -1
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "turn_start_at": 19.261,
+                                "timerStart": 104.18299999999999,
+                                "game_started": true,
+                                "current_turn": 0,
+                                "current_turn_type": "roll",
+                                "position": 0,
+                                "dices_rolled": [
+                                    6
+                                ]
+                            }</code>
+                            <pre id="json-display-19"></pre>
+                        </td>
+                    </tr>    
+                    <tr>
+                        <td >6</td>
+                        <td>This event is use for leave game.</td>
+                        <td>leaveTable</td>
+                        <td>
+                            <code>{"room":"765090"}</code>
+                        </td>
+                        </td>
+                        <td>
+                            <code id="json-input-20">{
+                                "status": 1,
+                                "message": "SUCCESS"
+                            }</code>
+                            <pre id="json-display-20"></pre>
+                        </td>
+                    </tr>   
+                </tbody>
+            </table>
+
+
+            
+        </div>
+          
+    </div>
+      
+    
+</div>
+<script type="text/javascript">
+    
+        function getJson(id) {
+            try {
+                $("#"+id).hide();
+                return JSON.parse($('#'+id).html());
+            } catch (ex) {
+                alert('Wrong JSON Format: ' + ex);
+            }
+        }
+
+        var editor = new JsonEditor('#json-display-1', getJson("json-input-1"),{defaultCollapsed:true});
+        
+        var editor = new JsonEditor('#json-display-2', getJson("json-input-2"),{defaultCollapsed:true});
+        
+        var editor = new JsonEditor('#json-display-3', getJson("json-input-3"),{defaultCollapsed:true});
+        var editor = new JsonEditor('#json-display-4', getJson("json-input-4"),{defaultCollapsed:true});
+        var editor = new JsonEditor('#json-display-5', getJson("json-input-5"),{defaultCollapsed:true});
+        
+        var editor = new JsonEditor('#json-display-8', getJson("json-input-8"),{defaultCollapsed:true});
+        var editor = new JsonEditor('#json-display-9', getJson("json-input-9"),{defaultCollapsed:true});
+        var editor = new JsonEditor('#json-display-10', getJson("json-input-10"),{defaultCollapsed:true});
+        var editor = new JsonEditor('#json-display-11', getJson("json-input-11"),{defaultCollapsed:true});
+        var editor = new JsonEditor('#json-display-12', getJson("json-input-12"),{defaultCollapsed:true});
+        var editor = new JsonEditor('#json-display-13', getJson("json-input-13"),{defaultCollapsed:true});
+        var editor = new JsonEditor('#json-display-14', getJson("json-input-14"),{defaultCollapsed:true});
+        var editor = new JsonEditor('#json-display-15', getJson("json-input-15"),{defaultCollapsed:true});
+        var editor = new JsonEditor('#json-display-16', getJson("json-input-16"),{defaultCollapsed:true});
+        var editor = new JsonEditor('#json-display-17', getJson("json-input-17"),{defaultCollapsed:true});
+        var editor = new JsonEditor('#json-display-18', getJson("json-input-18"),{defaultCollapsed:true});
+        var editor = new JsonEditor('#json-display-19', getJson("json-input-19"),{defaultCollapsed:true});
+        var editor = new JsonEditor('#json-display-20', getJson("json-input-20"),{defaultCollapsed:true});
+
+        var editor = new JsonEditor('#json-display-7', getJson("json-input-7"),{
+            defaultCollapsed:true
+        });
+        var editor = new JsonEditor('#json-display-6', getJson("json-input-6"),{
+            defaultCollapsed:true
+        });
+        
+    
+</script>
+        </main>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    </body>
+</html>

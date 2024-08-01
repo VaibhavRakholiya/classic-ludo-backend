@@ -1,0 +1,34 @@
+{
+  "name": "game-name-socket-api",
+  "version": "1.0.0",
+  "description": "Game",
+  "main": "server.js",
+  "scripts": {
+    "start": "node socket-server.js",
+    "dev": "nodemon socket-server.js"
+  },
+  "engines": {
+    "node": "8.10.0"
+  },
+  "author": "Capermint",
+  "license": "ISC",
+  "dependencies": {
+    "async-lock": "^1.4.0",
+    "axios": "^1.4.0",
+    "bcryptjs": "2.4.3",
+    "bluebird": "^3.7.2",
+    "body-parser": "1.18.3",
+    "cron": "^1.7.1",
+    "cryptr": "^4.0.0",
+    "dotenv": "^8.6.0",
+    "ejs": "2.6.1",
+    "express": "4.16.4",
+    "lodash": "^4.17.11",
+    "log4js": "^6.1.0",
+    "mongoose": "^6.5.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.22",
+    "redis": "^3.0.2",
+    "socket.io": "^4.7.2"
+  }
+}
